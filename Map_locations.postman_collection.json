@@ -1,12 +1,12 @@
 {
 	"info": {
-		"_postman_id": "6a209053-02b9-40e1-9a5f-fdc6dcae6f72",
+		"_postman_id": "12e08fd6-aa6c-4a17-bb03-049086c54a94",
 		"name": "Map_locations",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Add location",
+			"name": "Add new location",
 			"event": [
 				{
 					"listen": "test",
@@ -35,11 +35,11 @@
 							"    pm.collectionVariables.set(\"new_place_id\", jsonData.place_id);\r",
 							"});\r",
 							"\r",
-							"pm.test (\"place_id is not empty\", () => {\r",
+							"pm.test (\"reference is not empty\", () => {\r",
 							"    pm.expect(jsonData.reference).is.not.empty;\r",
 							"});\r",
 							"\r",
-							"pm.test (\"place_id is not empty\", () => {\r",
+							"pm.test (\"id is not empty\", () => {\r",
 							"    pm.expect(jsonData.id).is.not.empty;\r",
 							"});\r",
 							""
@@ -170,7 +170,7 @@
 			"response": []
 		},
 		{
-			"name": "Edit location",
+			"name": "Edit location address",
 			"event": [
 				{
 					"listen": "test",
@@ -256,7 +256,7 @@
 							"    pm.expect(pm.response.text()).to.not.include(\"error\");\r",
 							"});\r",
 							"\r",
-							"pm.test (\"Post equals get\", () => {\r",
+							"pm.test (\"Post equals get, with new address\", () => {\r",
 							"    pm.expect(jsonData.location.latitude).to.eql(JSON.stringify(addRequest.location.lat));\r",
 							"    pm.expect(jsonData.location.longitude).to.eql(JSON.stringify(addRequest.location.lng));\r",
 							"    pm.expect(jsonData.accuracy).to.eql(JSON.stringify(addRequest.accuracy));\r",
